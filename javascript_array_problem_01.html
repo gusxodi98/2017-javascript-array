@@ -1,29 +1,40 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <script type="text/javascript">
-        function calculate(arr) {
-          var result = 0;
-          // TODO : Ïó¨Í∏∞Ïóê Ïó¨Îü¨Î∂ÑÏù¥ ÏßÅÏ†ë ÏΩîÎî©ÏùÑ Ìï¥Ï£ºÏÑ∏Ïöî.       
-          return result;
-        }
-
-        expect(calculate([1, '+', 2]), 3);
-        expect(calculate([1, '-', 2]), -1);
-        expect(calculate([1, '*', 2]), 2);
-        expect(calculate([1, '+', 2, '+', 3]), 6);
-        expect(calculate([1, '*', 2, '+', 3, '*', 10]), 50);
-        expect(calculate([10, '-', 10, '*', 3, '+', 10, '-', 10]), 0);
-        expect(calculate([5, '*', 5, '*', 10, '+', 100, '-', 300]), 50);
-
-        function expect(l, r) {
-            if (l === r)
-                console.log('pass');
-            else
-                console.log('fail');
-        }
-    </script>
-</head>
-<body>
-</body>
-</html>
+ <!DOCTYPE html>
+ <html>
+ <head>
+      <script type="text/javascript">
+          function calculate(arr) {
+            var result = 0;
+           // TODO : ø©±‚ø° ø©∑Ø∫–¿Ã ¡˜¡¢ ƒ⁄µ˘¿ª «ÿ¡÷ººø‰.       
+           result = arr[0];
+             for (var i = 1; i < arr.length; i+=2) {
+                  switch(arr[i]){
+                     case '+' : result += arr[i+1];
+                                break;
+                     case '-' : result -= arr[i+1];
+                                break;
+                     case '*' : result *= arr[i+1];
+                                break;
+                 }
+              } 
+            return result;
+          }
+  
+         expect(calculate([1, '+', 2]), 3);
+         expect(calculate([1, '-', 2]), -1);
+         expect(calculate([1, '*', 2]), 2);
+         expect(calculate([1, '+', 2, '+', 3]), 6);
+         expect(calculate([1, '*', 2, '+', 3, '*', 10]), 50);
+         expect(calculate([10, '-', 10, '*', 3, '+', 10, '-', 10]), 0);
+         expect(calculate([5, '*', 5, '*', 10, '+', 100, '-', 300]), 50);
+ 
+         function expect(l, r) {
+             if (l === r)
+                 console.log('pass');
+             else
+                 console.log('fail');
+         }
+     </script>
+ </head>
+ <body>
+ </body>
+ </html>

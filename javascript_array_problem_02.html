@@ -1,27 +1,39 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <script type="text/javascript">
-        function check_string() {
-          // TODO : ì—¬ê¸°ì— ì—¬ëŸ¬ë¶„ì´ ì§ì ‘ ì½”ë”©ì„ í•´ì£¼ì„¸ìš”.          
-          return true;
-        }
-
-        expect(check_string('(())())'), false);
-        expect(check_string('(((()())()'), false);
-        expect(check_string('(()())((()))'), true);
-        expect(check_string('((()()(()))(((())))()'), false);
-        expect(check_string('()()()()(()()())()'), true);
-        expect(check_string('(()((())()('), false);
-
-        function expect(l, r) {
-            if (l === r)
-                console.log('pass');
-            else
-                console.log('fail');
-        }
-    </script>
-</head>
-<body>
-</body>
-</html>
+ <!DOCTYPE html>
+ <html>
+  <head>
+      <script type="text/javascript">
+          function check_string() {
+           // TODO : ¿©±â¿¡ ¿©·¯ºĞÀÌ Á÷Á¢ ÄÚµùÀ» ÇØÁÖ¼¼¿ä.          
+           return true;
+             var open = 0, close = 0;
+             for (var i = 0; i < arguments[0].length; i++) {
+                 if(arguments[0].charAt(i)=='(')
+                     open++;
+ 
+                 else if (arguments[0].charAt(i)==')')
+                     close++;
+             }
+             if(open == close)
+                 return true;
+             else
+                 return false;
+          }
+  
+          expect(check_string('(())())'), false);
+         expect(check_string('(((()())()'), false);
+         expect(check_string('(()())((()))'), true);
+         expect(check_string('((()()(()))(((())))()'), false);
+         expect(check_string('()()()()(()()())()'), true);
+         expect(check_string('(()((())()('), false);
+ 
+         function expect(l, r) {
+             if (l === r)
+                 console.log('pass');
+             else
+                 console.log('fail');
+         }
+     </script>
+ </head>
+ <body>
+ </body>
+ </html>
